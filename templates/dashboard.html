@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Farmer Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+</div>
+
+<div class="container">
+
+<span class="navbar-brand">🌾 Smart Agriculture System</span>
+
+<a href="/logout" class="btn btn-light">Logout</a>
+
+</div>
+
+</nav>
+
+<div class="container mt-4">
+
+<div class="welcome-box">
+
+<h3>Welcome {{ user }}</h3>
+
+<p>Use the filters below to find the best crops based on soil, season, and water requirement.</p>
+
+</div>
+
+<div class="card-box">
+
+<h4 class="mb-4">Crop Recommendation Filter</h4>
+
+<form method="post" class="row g-3">
+
+<div class="col-md-3">
+
+<label>Season</label>
+
+<select name="season" class="form-select">
+
+<option>Kharif</option>
+
+<option>Rabi</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3">
+
+<label>Soil Type</label>
+
+<select name="soil" class="form-select">
+
+<option>Alluvial</option>
+<option>Black</option>
+<option>Loamy</option>
+<option>Sandy</option>
+<option>Clay</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3">
+
+<label>Water Requirement</label>
+
+<select name="water" class="form-select">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+
+</select>
+
+</div>
+
+<div class="col-md-3 d-flex align-items-end">
+
+<button class="btn btn-success w-100">
+
+Search Crops
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+{% if data %}
+
+<div class="card-box mt-4">
+
+<h4 class="mb-3">Recommended Crops</h4>
+
+<table class="table table-striped table-bordered">
+
+<thead>
+
+<tr>
+
+<th>Crop</th>
+<th>Water Need</th>
+<th>Fertilizer</th>
+<th>MSP (₹)</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for row in data %}
+
+<tr>
+
+<td>{{ row[0] }}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endif %}
+
+<div class="footer mt-4">
+
+<p>Smart Agriculture Advisory System | Project</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
