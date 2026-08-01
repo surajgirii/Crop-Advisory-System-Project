@@ -1,0 +1,83 @@
+/* Global Styling */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f6;
+}
+
+/* Page Heading */
+h2, h3, h4{
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+/* Card Design */
+.card-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn-success{
+    background:#2e7d32;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#1b5e20;
+}
+
+/* Form Inputs */
+input, select{
+    border-radius:6px !important;
+}
+
+/* Table Styling */
+table{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+table th{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+}
+
+table td{
+    text-align:center;
+}
+
+/* Navbar Style */
+.navbar{
+    background:#2e7d32;
+}
+
+.navbar-brand{
+    color:white !important;
+    font-weight:600;
+}
+
+/* Dashboard Welcome Box */
+.welcome-box{
+    background:#e8f5e9;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+/* Footer */
+.footer{
+    margin-top:40px;
+    text-align:center;
+    color:#777;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .card-box{
+        padding:20px;
+    }
+}
